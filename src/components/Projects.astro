@@ -1,0 +1,199 @@
+---
+import HtmlIcon from "../icons/HTML.astro";
+import CssIcon from "../icons/CSS.astro";
+import JavascriptIcon from "../icons/Javascript.astro";
+import TypescriptIcon from "../icons/Typescript.astro";
+import JavaIcon from "../icons/Java.astro";
+import TailwindIcon from "../icons/Tailwind.astro";
+import AngularIcon from "../icons/Angular.astro";
+import PostgresqlIcon from "../icons/Postgre.astro";
+import SpringIcon from "../icons/Spring.astro";
+import LinkButton from "../components/LinkButton.astro";
+import GitHub from "../icons/GitHub.astro";
+import ExpressJsIcon from "../icons/express.astro";
+import SequelizeIcon from "../icons/sequelize.astro";
+import MongoDBIcon from "../icons/mongodb.astro";
+
+const TAGS = {
+  HTML: {
+    name: "HTML",
+    class: "bg-gray-600 text-white",
+    icon: HtmlIcon,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-gray-600 text-white",
+    icon: CssIcon,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-gray-600 text-white",
+    icon: JavascriptIcon,
+  },
+  JAVA: {
+    name: "Java",
+    class: "bg-gray-600 text-white",
+    icon: JavaIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-gray-600 text-white",
+    icon: TailwindIcon,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-gray-600 text-white",
+    icon: TypescriptIcon,
+  },
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-gray-600 text-white",
+    icon: AngularIcon,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-gray-600 text-white",
+    icon: PostgresqlIcon,
+  },
+  SPRING: {
+    name: "Spring",
+    class: "bg-gray-600 text-white",
+    icon: SpringIcon,
+  },
+  EXPRESSJS: {
+    name: "ExpressJS",
+    class: "bg-gray-600 text-white",
+    icon: ExpressJsIcon,
+  },
+  SEQUELIZE: {
+    name: "Sequelize",
+    class: "bg-gray-600 text-white",
+    icon: SequelizeIcon,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-gray-600 text-white",
+    icon: MongoDBIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "TASK TODO APP",
+    description:
+      "Task management application built with Angular and Tailwind CSS. It allows users to create, read, update, and delete tasks.",
+    link: "#",
+    image: "/projects/TO-DO-MEOW.webp",
+    github: "https://github.com/Flayxamax/CRUD-TASK-ANGULAR19",
+    tags: [TAGS.ANGULAR, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.HTML],
+  },
+  {
+    title: "E-COMMERCE-ANGULAR19",
+    description:
+      "E-commerce store built using Angular 19. It uses state management techniques with Angular Signals to efficiently handle and show the state of the application. The application fetches and manages product data from the FakeStoreAPI, providing a realistic and dynamic shopping experience.",
+    link: "#",
+    image: "/projects/ecommerce.webp",
+    github: "https://github.com/Flayxamax/E-COMMERCE-ANGULAR19",
+    tags: [
+      TAGS.ANGULAR,
+      TAGS.TYPESCRIPT,
+      TAGS.TAILWIND,
+      TAGS.HTML,
+      TAGS.JAVASCRIPT,
+    ],
+  },
+  {
+    title: "INVOICE MANAGEMENT SYSTEM",
+    description:
+      "Invoice management system built with Java and Spring Boot. It allows users to create invoices with a specific ticket.",
+    link: "#",
+    image: "/projects/invoicesys.webp",
+    github: "https://github.com/Flayxamax/SISTEMA-FACTURACION",
+    tags: [
+      TAGS.ANGULAR,
+      TAGS.TYPESCRIPT,
+      TAGS.TAILWIND,
+      TAGS.HTML,
+      TAGS.JAVA,
+      TAGS.SPRING,
+      TAGS.POSTGRESQL,
+    ],
+  },
+  {
+    title: "SCHOOL ADMINISTRATION SYSTEM",
+    description:
+      "System to manage student data, register classes and grades, and monthly payments. Includes a module to monitor each student's progress, generating reports on their performance in each class.",
+    link: "#",
+    image: "/projects/schoolsys.webp",
+    github:
+      "https://github.com/Flayxamax/Sistema-de-Administraci-n-para-Escuela",
+    tags: [
+      TAGS.HTML,
+      TAGS.CSS,
+      TAGS.JAVASCRIPT,
+      TAGS.EXPRESSJS,
+      TAGS.SEQUELIZE,
+    ],
+  },
+  {
+    title: "FINDANY",
+    description:
+      "Blog application where users can register and create posts and/or comment on them. Back-end built in Java",
+    link: "#",
+    image: "/projects/findany.webp",
+    github: "https://github.com/Flayxamax/Findany",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.JAVA, TAGS.MONGODB],
+  },
+];
+---
+
+<div class="mt-6 flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/1">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-2xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt={title}
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-xl font-normal text-gray-800 dark:text-orange-500 sm:text-2xl">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2 gap-y-2 flex-wrap">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-2 text-sm text-gray-700 dark:text-gray-100 sm:text-base text-pretty">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>

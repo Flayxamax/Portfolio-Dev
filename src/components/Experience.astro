@@ -1,0 +1,35 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    title: "Web Application Developer",
+    date: "Present",
+    description:
+      "Working as a developer focused on building and maintaining web application solutions. Experienced in front-end and back-end technologies.",
+    isLatest: true,
+  },
+  {
+    title: "Professional Practices – Gobierno del Estado de Sonora",
+    date: "January 2025 - June 2025",
+    description:
+      "Completed professional practices at the Government of the State of Sonora, acquiring real-world experience in software maintenance and support.",
+  },
+  {
+    title: "Software Engineering Degree",
+    date: "2021 - 2025",
+    description:
+      "Got a degree in Software Engineering, gaining a strong foundation in computer science, software development methodologies, and practical programming skills.",
+  },
+];
+---
+
+<ol class="m-4 relative border-s border-gray-200 dark:border-white">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-6">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

@@ -1,0 +1,47 @@
+---
+const navItems = [
+  {
+    title: "Home",
+    href: "#top",
+    label: "Home",
+  },
+  {
+    title: "Background",
+    href: "#background",
+    label: "Background",
+  },
+  {
+    title: "Projects",
+    href: "#projects",
+    label: "Projects",
+  },
+  {
+    title: "Contact",
+    href: "#top",
+    label: "Contact",
+  },
+];
+---
+
+<nav-bar class="flex justify-between">
+  <nav
+    class="fixed top-0 left-0 h-full text-white text-2xl w-32 p-4 flex flex-col items-center md:left-64"
+  >
+    <ul class="flex flex-col mt-auto mb-auto space-y-6 md:space-y-18">
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="text-2xl group relative w-max ml-2"
+              aria-label={item.label}
+            >
+              <span>{item.title}</span>
+              <span class="absolute -bottom-2 left-0 w-0 transition-all h-0.5 bg-white group-hover:w-full" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</nav-bar>

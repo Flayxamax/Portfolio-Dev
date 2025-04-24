@@ -1,0 +1,51 @@
+---
+import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import MailIcon from "../icons/Mail.astro";
+---
+
+<div
+  class="flex flex-col sm:flex-row items-center gap-y-4 sm:gap-x-4 justify-center sm:justify-start"
+>
+  <img
+    class="rounded-full w-24 h-24 sm:w-32 sm:h-32"
+    src="https://media.licdn.com/dms/image/v2/D4E03AQFy7doMhAk9XQ/profile-displayphoto-shrink_200_200/B4EZXWrD0FHMAY-/0/1743063367529?e=1750896000&v=beta&t=gGDEePLY3LiZFkUO5wgaGFkxoVDDxwbfAGg-faQBNME"
+    alt="Profile pic"
+  />
+  <a
+    href="https://www.linkedin.com/in/ildefonso-lares-rangel-096928345/"
+    target="_blank"
+    rel="noopener"
+    class="flex justify-center items-center"
+  >
+    <Badge>Open to work</Badge>
+  </a>
+</div>
+<h1
+  class="text-white text-3xl sm:text-5xl mt-2 font-bold flex flex-col sm:flex-row gap-y-2 sm:gap-x-4 pb-10 text-center sm:text-left"
+>
+  Hey! I'm <span class="text-orange-500">Ildefonso Lares</span>
+</h1>
+<h2 class="text-2xl opacity-90">
+  <span class="text-orange-500">Software engineer</span> and <span
+    class="text-orange-500">Full Stack Developer</span
+  > with a passion for creating functional web applications.
+</h2>
+<nav class="flex gap-x-2 mt-8">
+  <SocialPill href="mailto:ildepro3025@gmail.com">
+    <MailIcon class="size-4" />
+    Contact me
+  </SocialPill>
+  <SocialPill
+    href="https://www.linkedin.com/in/ildefonso-lares-rangel-096928345/"
+  >
+    <LinkedInIcon class="size-4" />
+    LinkedIn
+  </SocialPill>
+  <SocialPill href="https://github.com/Flayxamax">
+    <GitHubIcon class="size-4" />
+    GitHub
+  </SocialPill>
+</nav>
