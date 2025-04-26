@@ -25,7 +25,7 @@ const navItems = [
 
 <nav-bar class="flex justify-between">
   <nav
-    class="fixed top-0 left-0 h-full text-white text-2xl w-32 p-4 flex flex-col items-center md:left-64"
+    class="hidden md:fixed md:top-0 md:left-0 md:h-full md:text-white md:text-2xl md:w-32 md:p-4 md:flex md:flex-col md:items-center md:left-64"
   >
     <ul class="flex flex-col mt-auto mb-auto space-y-6 md:space-y-18">
       {
@@ -37,7 +37,7 @@ const navItems = [
               aria-label={item.label}
             >
               <span>{item.title}</span>
-              <span class="absolute -bottom-2 left-0 w-0 transition-all h-0.5 bg-white group-hover:w-full" />
+              <span class="absolute -bottom-2 left-0 w-0 transition-all h-0.5 bg-white group-hover:w-full group-[.active]:w-full" />
             </a>
           </li>
         ))
@@ -45,3 +45,21 @@ const navItems = [
     </ul>
   </nav>
 </nav-bar>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(({ isIntersecting, target }) => {
+          const link = document.querySelector(`nav a[href="#${target.id}"]`);
+          link?.classList.toggle("active", isIntersecting);
+        });
+      },
+      { rootMargin: "-50% 0px -50% 0px" }
+    );
+
+    document
+      .querySelectorAll("section[id]")
+      .forEach((section) => observer.observe(section));
+  });
+</script>

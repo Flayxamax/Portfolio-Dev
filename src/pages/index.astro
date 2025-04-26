@@ -12,20 +12,20 @@ import Hero from "../components/Hero.astro";
 <Layout>
   <main class="px-4">
     <div class="min-h-screen flex justify-center">
-      <SectionContainer>
+      <SectionContainer id="top">
         <Hero />
       </SectionContainer>
     </div>
     <SectionContainer id="background" class="mb-56">
-      <h2 class="text-2xl font-semibold flex gap-x-2 items-center">
-        <BriefcaseIcon class="size-8" />
+      <h2 class="text-4xl font-semibold flex gap-x-2 items-center">
+        <BriefcaseIcon class="size-10" />
         Background
       </h2>
       <Experience />
     </SectionContainer>
     <SectionContainer id="projects" class="mb-56">
-      <h2 class="text-2xl font-semibold flex gap-x-2 items-center">
-        <CodeIcon class="size-8" />
+      <h2 class="text-4xl font-semibold flex gap-x-2 items-center">
+        <CodeIcon class="size-10" />
         Projects
       </h2>
       <Projects />
